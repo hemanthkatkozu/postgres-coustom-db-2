@@ -1,4 +1,4 @@
-CREATE TABLE hero
+CREATE TABLE HUMANRESOURCE.hero
 (
     id BIGSERIAL NOT NULL,
     name VARCHAR(250) NOT NULL,
@@ -9,4 +9,6 @@ CREATE TABLE hero
     cunning INT NOT NULL,
     strength INT NOT NULL,
     technology INT NOT NULL
-)
+);
+ALTER TABLE HUMANRESOURCE.hero
+ADD CONSTRAINT pk_hero_id PRIMARY KEY (id);
