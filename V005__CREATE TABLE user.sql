@@ -6,6 +6,4 @@ CREATE TABLE user(
     alias VARCHAR(250) NOT NULL,
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL
-);
-ALTER TABLE user
-ADD CONSTRAINT pk_user_id PRIMARY KEY (id);
+)
