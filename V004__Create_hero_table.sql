@@ -1,6 +1,4 @@
--- CREATE HERO TABLE
-CREATE TABLE hero_data.hero
-(
+CREATE TABLE hero(
     id BIGSERIAL NOT NULL,
     name VARCHAR(250) NOT NULL,
     description TEXT NOT NULL,
@@ -13,5 +11,5 @@ CREATE TABLE hero_data.hero
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL
 );
-ALTER TABLE hero_data.hero
+ALTER TABLE hero
 ADD CONSTRAINT pk_hero_id PRIMARY KEY (id);
