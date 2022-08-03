@@ -3,9 +3,9 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
+      Select approved ticket number:
+        type: BRANCH
+        description: 'releases/*'
       boolean:
         type: boolean
         description: True or False
