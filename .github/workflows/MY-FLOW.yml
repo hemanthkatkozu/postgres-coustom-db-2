@@ -1,15 +1,30 @@
-name: My Workflow
+name: CI
+
 on:
-  push:
-    branches:
-      - 'releases/*'
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+      boolean:
+        type: boolean
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - foo
+        - bar
+        - baz
 jobs:
-  My Workflow:
-    name: RETRIEVE CODE
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout code
-        uses: actions/checkout@v2
-        env:
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+
+      - name: greet
+        run: | 
+          echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
+          echo "boolean is ${{ github.event.inputs.boolean }}" / ${{ inputs.boolean }} 
+          echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
