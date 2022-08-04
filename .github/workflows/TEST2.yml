@@ -1,5 +1,10 @@
 name: TESTING-BRANCH
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
 jobs:
   build:
     runs-on: ubuntu-latest
