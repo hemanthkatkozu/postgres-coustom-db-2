@@ -1,10 +1,10 @@
-name: Extract branch name
+name: TESTING-BRANCH
 on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
+      - name: TESTING-BRANCH
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
