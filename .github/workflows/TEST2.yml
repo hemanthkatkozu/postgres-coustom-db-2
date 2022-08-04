@@ -2,9 +2,8 @@ name: TESTING-BRANCH
 on: 
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
+      parameter:
+        description: My Parameter
 jobs:
   build:
     runs-on: ubuntu-latest
